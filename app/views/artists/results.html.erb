@@ -1,3 +1,22 @@
-<h1>Success!!!</h1>
-<h2> <%= @artist_1 %> = <%= @clean_1 %> </h2>
-<h2> <%= @artist_2 %> = <%= @clean_2 %> </h2>
+
+<body>
+
+<div id="header">
+<h1><%= @artist_1.capitalize %> vs <%= @artist_2.capitalize %></h1>
+</div>
+
+<div id="artist_1">
+<h1> <%= @artist_1.capitalize %> </h1>
+<p>
+  <%= @clean_1_number %>
+</p>
+</div>
+
+<div id="artist_2">
+<h1> <%= @artist_2.capitalize %> </h1>
+<p>
+  <%= @clean_2_number %>
+</p>
+</div>
+
+</body>
