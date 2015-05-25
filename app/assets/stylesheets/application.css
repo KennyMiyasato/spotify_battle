@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require 'results.css'
+ *= require 'font-awesome.min.css'
+ *= require 'main.css'
  *= require_tree .
  *= require_self
  */

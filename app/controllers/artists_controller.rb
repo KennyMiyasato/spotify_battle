@@ -4,7 +4,7 @@ require 'rspotify'
   def index
   end
 
-  def show
+  def example
   end
 
   def results
@@ -22,6 +22,9 @@ require 'rspotify'
     # 3) Saves the number of followers for the first return of the artist.
     @artist_1_followers = @artist_1_summary[0].followers["total"]
     @artist_2_followers = @artist_2_summary[0].followers["total"]
+
+    @artist_1_pic = @artist_1_summary[0].images[0]["url"]
+    @artist_2_pic = @artist_2_summary[0].images[0]["url"]
 
     # Calls the method created under the artist model to separate the number of
     # followers with a comma to read the number of followers easier

@@ -1,3 +1,9 @@
+html {
+    background: url(https://dl.dropboxusercontent.com/u/110013595/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
 #header {
   background-color:black;
   color:white;
@@ -10,6 +16,31 @@
   width:350px;
   float:left;
   padding:10px;
+}
+
+/* .artist_img {
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+*/
+
+.artist_img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.artist_img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 
 #artist_2 {
