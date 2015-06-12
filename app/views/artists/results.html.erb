@@ -1,44 +1,83 @@
-<section id="two" class="wrapper alt style2">
-  <section class="spotlight">
-    <div class="image"><img src="<%= @artist_1_pic %>" alt="<%= @artist_1 %>" /></div><div class="content">
-      <h2> <%= @artist_1.split.map(&:capitalize).join(' ') %> </h2>
-      <p> <%= @clean_1_number %> </p>
-    </div>
-  </section>
-  <section class="spotlight">
-    <div class="image"><img src="<%= @artist_2_pic %>" alt="<%= @artist_2 %>" /></div><div class="content">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+  <table style="width:100%">
+    <caption>
+      <%= @artist_1.split.map(&:capitalize).join(' ') %>
+      vs
+      <%= @artist_2.split.map(&:capitalize).join(' ') %>
+    </caption>
+
+
+    <tr>
+      <th>
+        <center>
+          <% if @artist_1_followers > @artist_2_followers %>
+          <%= "Winner!" %>
+          <% elsif @artist_1_followers < @artist_2_followers %>
+          <%= "Loser!" %>
+          <% end %>
+        </center>
+      </th>
+      <th>
+        <center>
+          <% if @artist_2_followers > @artist_1_followers %>
+          <%= "Winner!" %>
+          <% elsif @artist_2_followers < @artist_1_followers %>
+          <%= "Loser!" %>
+          <% end %>
+        </center>
+      </th>
+
+    </tr>
+    <tr>
+      <td>
+        <div
+        class="content">
+        <h2> <%= @artist_1.split.map(&:capitalize).join(' ') %> </h2>
+        <p> <%= @clean_1_number %> </p>
+      </div>
+    </td>
+
+    <td>
+      <div
+      class="content">
       <h2> <%= @artist_2.split.map(&:capitalize).join(' ') %> </h2>
       <p> <%= @clean_2_number %> </p>
     </div>
-  </section>
+  </td>
+</tr>
+<!--- -->
+<tr>
+  <td>
+    <section class="spotlight">
+      <li class="crop">
+        <img src="<%= @artist_1_pic %>" alt="<%= @artist_1 %>" />
+      </li>
+    </td>
 
-<body>
+    <td>
+      <section class="spotlight">
+        <li class="crop">
+          <img src="<%= @artist_2_pic %>" alt="<%= @artist_2 %>" />
+        </li>
+      </td>
 
-  <div id="header">
-    <h1><%= @artist_1.split.map(&:capitalize).join(' ') %>
-      vs
-      <%= @artist_2.split.map(&:capitalize).join(' ') %>
-    </h1>
-  </div>
-
-  <div id="artist_1">
-    <div class="artist_img">
-      <img src="<%= @artist_1_pic %>" alt="<%= @artist_1 %>" />
-    </div>
-    <h1> <%= @artist_1.split.map(&:capitalize).join(' ') %> </h1>
-    <p>
-      <%= @clean_1_number %>
-    </p>
-  </div>
-
-  <div id="artist_2">
-    <div class="artist_img">
-      <img src="<%= @artist_2_pic %>" alt="<%= @artist_2 %>" />
-    </div>
-    <h1> <%= @artist_2.split.map(&:capitalize).join(' ') %> </h1>
-    <p>
-      <%= @clean_2_number %>
-    </p>
-  </div>
+    </tr>
+  </table>
 
 </body>
